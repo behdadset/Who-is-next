@@ -201,7 +201,10 @@
 }
 
 .membersList{
+    height: 300px;
     margin-top: 20px;
+    overflow-y: auto;
+
 }
 
 .names{
