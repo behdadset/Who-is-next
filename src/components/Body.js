@@ -10,8 +10,9 @@ export default function Body() {
                 <div className="startPage">
                     <p className="ready">When ready, select START</p>
                     <button className="startBtn">START</button>
-                    <History />
+                    
                 </div>
+                <History />
                 
             </div>
             

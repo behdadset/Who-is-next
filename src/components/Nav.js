@@ -13,7 +13,7 @@ function Nav(){
                 <form >
                     <input type="text" className="title" placeholder="Type title..." />
                     <button className="save">Save</button>
-
+                    
                 </form>
                 <div className="navBtns">
                     <button className="qSelect">Quick Select</button>
