@@ -11,6 +11,7 @@ class Side extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     componentDidMount(){ //Get user's name list from firebase database
@@ -34,6 +35,10 @@ class Side extends React.Component {
         this.setState({value: ''});
     }
 
+    handleDelete(){
+        console.log("delete")
+    }
+
     render() {
         return (
             <div>
@@ -52,7 +57,7 @@ class Side extends React.Component {
                                                     <input type="checkbox" className="myCheck" />
                                                     <p>{key[1].name}</p>
                                                 </div>
-                                                <button className="deleteBtn">Delete</button>
+                                                <button onClick={() =>fire.database().ref().child("123456").child("names").child(key[0]).remove()} className="deleteBtn">Delete</button>
                                             </div> 
                                 })
                             }
