@@ -26,11 +26,17 @@ class Side extends React.Component {
 
     handleSubmit(event) {
         console.log(this.state.value)
-        if(this.state.names){
-            fire.database().ref().child("123456").child("names").child(this.state.names.length).child("name").set(this.state.value)
+        if(this.state.value != ""){
+            if(this.state.names){
+                fire.database().ref().child("123456").child("names").child(this.state.names.length).child("name").set(this.state.value)
+            }else{
+                fire.database().ref().child("123456").child("names").child(0).child("name").set(this.state.value)
+            }
         }else{
-            fire.database().ref().child("123456").child("names").child(0).child("name").set(this.state.value)
+            alert("Please Fill Name Field!");
+
         }
+        
         event.preventDefault();
         this.setState({value: ''});
     }

@@ -236,7 +236,7 @@
 }
 
 .avatar{
-    background-color: rgb(199,108,209);
+    background-color: rgb(255, 158, 63);
     border: none;
     border-radius: 50%;
     padding: 20px;
@@ -256,4 +256,25 @@ div.gallery {
   
   div.gallery:hover {
     transform: scale(1.1);
+  }
+
+  .leftNavBtns{
+      display: flex;
+
+  }
+
+  .selectGroup{
+      font-size: 16px;
+    margin-left: 20px;
+    margin-top: -10px;
+    border: none;
+    background-color: rgb(66,126,230);
+    color: white;
+    width: max-content;
+  }
+
+  .logpage{
+      height: 400px;
+      width: 300px;
+      background-color: gray;
   }
