@@ -20,8 +20,18 @@
 
 }
 
+.homeBtn{
+    font-size: large;
+    font-weight: bolder;
+    border: none;
+    background-color:  rgb(66,126,230);
+    color: white;
+    cursor: pointer;
+
+}
+
 .mainNav{
-    height: 120px;
+    height: 50px;
     box-shadow: 0px 5px 8px #ccc;
 }
 
@@ -259,22 +269,82 @@ div.gallery {
   }
 
   .leftNavBtns{
-      display: flex;
-
+    display: flex;
+    margin-top: -10px;
   }
 
   .selectGroup{
-      font-size: 16px;
+    font-size: 16px;
     margin-left: 20px;
-    margin-top: -10px;
     border: none;
     background-color: rgb(66,126,230);
     color: white;
     width: max-content;
   }
 
-  .logpage{
-      height: 400px;
-      width: 300px;
-      background-color: gray;
+  #login{
+    display: none;
+
+  }
+
+  .login{
+    max-width: 500px;
+    margin: auto;
+    height: 380px;
+    width: 400px;
+    background-color: white;
+    margin: auto;
+    margin-top: 20vh;
+    box-shadow: 0px 10px 15px #ccc;
+
+  }
+
+  .logTitle{
+      margin-left: 110px;
+  }
+
+  .form-group{
+      margin-left: 20px;
+  }
+
+  .form-control{
+    width: 350px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    height: 30px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .loginBtn{
+      margin-left: 20px;
+      border: none;
+      background-color: rgb(66,126,230);
+      width: 90px;
+      height: 30px;
+      cursor: pointer;
+      color: white;
+      font-weight: bolder;
+  }
+
+  .forgot-password{
+    margin-top: 10px;
+    font-size: small;
+  }
+
+  .notUser{
+      margin-right: 20px;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .error{
+      margin: 20px;
+      font-size: large;
+      color: rgb(159, 0, 0);
+  }
+
+  .inputs{
+      font-size: small;
   }

@@ -1,21 +1,9 @@
 import React from 'react';
 
 function Nav(){
-      
+ 
     return(
         <div className="mainNav">
-            <div className="navTop">
-                <div className="leftNavBtns">
-                    <h3 className="home">Home</h3>
-                    <select  className="selectGroup">
-                        <option value="Random Algorithim">Groups</option>
-                        <option value="Alphabetic">Classmates</option>
-                        <option value="Reverse Alphabetic">Colleague</option>
-                    </select>
-                </div>
-                <h3>WHOSE NEXT PERSON</h3>
-                <button className="signin">Sign in</button>
-            </div>
             <div className="inputNav">
                 <form >
                     <input type="text" className="title" placeholder="Type title..." />
