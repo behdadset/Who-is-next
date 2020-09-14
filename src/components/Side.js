@@ -6,18 +6,26 @@ class Side extends React.Component {
         super(props);
         this.state = {
             value: '',
-            names: {}
+            names: {},
+            userId: ''
         };
+
+        fire.auth().onAuthStateChanged((user) =>{
+            if(user.uid ){
+                this.setState({userId: user.uid})
+                fire.database().ref(this.state.userId).child("groups").child("classmastes").child("names").on("value",res => {
+                    this.setState({names: res.val()})
+                })
+                console.log("working"+this.state.userId)
+            }
+        })
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
     }
 
-    componentDidMount(){ //Get user's name list from firebase database
-        fire.database().ref(`123456`).child("names").on("value",res => {
-            this.setState({names: res.val()})
-        })
+    componentDidMount(){
+        console.log("Test"+this.state.userId)
     }
 
     handleChange(event) {
@@ -27,11 +35,16 @@ class Side extends React.Component {
     handleSubmit(event) {
         console.log(this.state.value)
         if(this.state.value !== ""){
-            if(this.state.names){
-                fire.database().ref().child("123456").child("groups").child("classmastes").child("available_names").child(this.state.names.length).child("name").set(this.state.value)
+            if(this.state.userId){
+                if(this.state.names){
+                    fire.database().ref().child(this.state.userId).child("groups").child("classmastes").child("names").child(this.state.names.length).child("name").set(this.state.value)
+                }else{
+                    fire.database().ref().child(this.state.userId).child("groups").child("classmastes").child("names").child(0).child("name").set(this.state.value)
+                }
             }else{
-                fire.database().ref().child("123456").child("names").child(0).child("name").set(this.state.value)
+                alert("Please login first")
             }
+            
         }else{
             alert("Please Fill Name Field!");
 
@@ -39,10 +52,6 @@ class Side extends React.Component {
         
         event.preventDefault();
         this.setState({value: ''});
-    }
-
-    handleDelete(){
-        console.log("delete")
     }
 
     render() {

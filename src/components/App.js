@@ -1,10 +1,8 @@
 import React from 'react';
-import Nav from './Nav'
 import {Link} from 'react-router-dom'
 import Login from './Login'
 import Signup from './Signup'
 import Home  from './Body'
-import fire from './fire'
 import {
   BrowserRouter as Router,
   Switch,
