@@ -1,9 +1,12 @@
 import React from 'react'
 import Side from './Side'
 import History from './History'
+import Nav from './Nav'
 
 export default function Body() {
     return (
+        <div>
+        <Nav />
         <div>
             <div className="mainBody">
                 <Side />
@@ -16,6 +19,7 @@ export default function Body() {
                 
             </div>
             
+        </div>
         </div>
     )
 }

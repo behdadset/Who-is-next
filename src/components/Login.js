@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fire from './fire';
+import {withRouter} from 'react-router-dom'
 
 class Login extends Component {
   constructor(props){
@@ -50,7 +51,7 @@ class Login extends Component {
             
             <div className="notUser">
             <button onClick={this.login} type="submit" className="loginBtn">Login</button>
-                <p className="forgot-password text-right">
+                <p className="switchText text-right">
                     Don't have an account? <a href="/signup">Sign Up</a>
                 </p>
             </div>
@@ -61,4 +62,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

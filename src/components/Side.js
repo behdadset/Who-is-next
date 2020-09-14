@@ -26,9 +26,9 @@ class Side extends React.Component {
 
     handleSubmit(event) {
         console.log(this.state.value)
-        if(this.state.value != ""){
+        if(this.state.value !== ""){
             if(this.state.names){
-                fire.database().ref().child("123456").child("names").child(this.state.names.length).child("name").set(this.state.value)
+                fire.database().ref().child("123456").child("groups").child("classmastes").child("available_names").child(this.state.names.length).child("name").set(this.state.value)
             }else{
                 fire.database().ref().child("123456").child("names").child(0).child("name").set(this.state.value)
             }
@@ -60,7 +60,7 @@ class Side extends React.Component {
                                 Object.entries(this.state.names).map(function (key) {
                                     return <div className="names">
                                                 <div className="nameInside">
-                                                    <input type="checkbox" className="myCheck" />
+                                                    <input type="checkbox" checked className="myCheck" />
                                                     <p>{key[1].name}</p>
                                                 </div>
                                                 <button onClick={() =>fire.database().ref().child("123456").child("names").child(key[0]).remove()} className="deleteBtn">Delete</button>

@@ -46,7 +46,7 @@
     border-bottom: 1px solid #ccc!important;
 }
 
-.signin{
+.signinBtn{
     margin-top: -5px;
     margin-bottom: 10px;
     background-color: white;
@@ -58,6 +58,33 @@
     height: 30px;
     cursor: pointer;
     font-weight: bolder;
+}
+
+.signupBtn{
+    margin-top: -5px;
+    margin-bottom: 10px;
+    background-color: rgb(66,126,230);
+    color: white;
+    border: 0 solid;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 30px;
+    cursor: pointer;
+    font-weight: bolder;
+    margin-right: 10px;
+}
+
+.signup{
+    background-color: white;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    height: 470px;
+    width: 400px;
+    margin-top: 20vh;
+    box-shadow: 0px 10px 15px #ccc;
 }
 
 .inputNav{
@@ -270,24 +297,22 @@ div.gallery {
 
   .leftNavBtns{
     display: flex;
-    margin-top: -10px;
   }
 
   .selectGroup{
+      cursor: pointer;
     font-size: 16px;
     margin-left: 20px;
+    margin-top: -10px;
     border: none;
     background-color: rgb(66,126,230);
     color: white;
     width: max-content;
   }
 
-  #login{
-    display: none;
-
-  }
-
   .login{
+    padding-left: 10px;
+    padding-right: 10px;
     max-width: 500px;
     margin: auto;
     height: 380px;
@@ -296,6 +321,11 @@ div.gallery {
     margin: auto;
     margin-top: 20vh;
     box-shadow: 0px 10px 15px #ccc;
+
+  }
+  
+  .signup{
+    
 
   }
 
@@ -326,9 +356,10 @@ div.gallery {
       cursor: pointer;
       color: white;
       font-weight: bolder;
+      border-radius: 4px;
   }
 
-  .forgot-password{
+  .switchText{
     margin-top: 10px;
     font-size: small;
   }
