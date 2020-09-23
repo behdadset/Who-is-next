@@ -1,15 +1,29 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import {Link} from 'react-router-dom'
 import Login from './Login'
 import Signup from './Signup'
-import Home  from './Body'
+import Body  from './Body'
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+import fire from './fire'
 
 function App() {
+  const [userId, setUserId] = useState(null)
+  const [nameList, setNameList] = useState(null)
+  const [listId, setListId] = useState(null)
+
+  fire.auth().onAuthStateChanged((user) =>{
+    if(user.uid && user.uid !== userId){
+      setUserId(user.uid)
+      fire.database().ref(user.uid).child("groups").child("classmastes").child("names").on("value",res => {
+        setNameList(res.val())
+      })
+      
+    }
+  })
   
   return (
     <div className="main">
@@ -32,7 +46,7 @@ function App() {
           </div>
           
           <Switch>
-            <Route path="/" exact component ={()=><Home />} />
+            <Route path="/" exact component ={()=><Body uId={userId} names={nameList}/>} />
             <Route path="/login" exact component ={()=><Login />} />
             <Route path="/signup" exact component ={()=><Signup />} />
           </Switch>
